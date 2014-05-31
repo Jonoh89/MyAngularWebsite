@@ -1,0 +1,20 @@
+{
+  "name": "MyAngularWebsite",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Jonoh89/MyAngularWebsite",
+  "authors": [
+    "Jonathan Holmlund <jonoh89@gmail.com>"
+  ],
+  "description": "My angular website to show my skills and work",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16"
+  }
+}
