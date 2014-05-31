@@ -16,6 +16,21 @@
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "karma": "^0.12.16",
+    "protractor": "^0.23.1",
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -p 8000",
+    "pretest": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor test/protractor-conf.js"
   }
 }

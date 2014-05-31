@@ -2,13 +2,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat : {
             libs: {
-                src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js','bower_components/angular/angular.min.js'],
+                src: ['bower_components/jquery/dist/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js','bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js'],
                 dest: 'app/js/libs.js'
             }
         },
 
         jshint: {
-            files: ['Gruntfile.js', 'app/js/**/*.js','!app/js/libs.js']
+            files: ['Gruntfile.js', 'app/js/**/*.js','test/**/*.js','!app/js/libs.js']
         },
 
         watch: {
