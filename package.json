@@ -1,0 +1,20 @@
+{
+  "name": "MyAngularWebsite",
+  "version": "1.0.0",
+  "description": "My personal website built with angular.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jonoh89/MyAngularWebsite.git"
+  },
+  "author": "Jonathan Holmlund <jonoh89@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jonoh89/MyAngularWebsite/issues"
+  },
+  "homepage": "https://github.com/Jonoh89/MyAngularWebsite",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
