@@ -1,1 +1,23 @@
 <h1>Contact</h1>
+
+<p><strong>Tel:</strong> 44 (0)7957584314</p>
+
+<p><strong>Skype name:</strong> Jonoh89</p>
+
+<form role="form" ng-controller="ContactFormCtrl as contactFormCtrl" ng-submit="contactFormCtrl.sendMessage()">
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input ng-model="contactFormCtrl.form.name" type="text" class="form-control" id="inputName" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label for="unputEmail">Email address</label>
+        <input ng-model="contactFormCtrl.form.email" type="email" class="form-control" id="unputEmail" placeholder="Enter email" required>
+    </div>
+    <div class="form-group">
+        <label for="textAreaMessage">Message</label>
+        <textarea ng-model="contactFormCtrl.form.message" id="textAreaMessage" class="form-control" rows="3"></textarea>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
