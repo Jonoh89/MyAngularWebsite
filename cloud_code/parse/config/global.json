@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "MyWebsite": {
+            "applicationId": "TJrHdCBVzqOxY4IzmbsoeF3Msnf0tmW6JV2XU5bE",
+            "masterKey": "" //MASTERKEY SHOULD NOT BE CHECKED IN PUBLIC REPO, also you must remove this comment for this to work :)
+        }, 
+        "_default": {
+            "link": "MyWebsite"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}
