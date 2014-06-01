@@ -7,8 +7,14 @@ angular.module('myWeb.contact',[])
 
     .controller('ContactFormCtrl',['$scope','Message', function($scope, Message){
         $scope.form = {};
+        $scope.sent = false;
+        this.sendMessage = function(event){
+            var self = this;
+            self.sent = false;
 
-        this.sendMessage = function(){
+            var submitButton = angular.element(event.target).find("button");
+            submitButton.button('loading');
+
             var message = new Message({
                 name: this.form.name,
                 message: this.form.message,
@@ -16,8 +22,11 @@ angular.module('myWeb.contact',[])
             });
 
             message.save().then(function(){
-                alert('Message saved');
+                self.sent = true;
+                submitButton.button('reset');
+                self.form = {};
+                $scope.messageForm.$setPristine();
             });
-            this.form = {};
+
         };
     }]);

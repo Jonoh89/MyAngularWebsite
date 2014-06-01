@@ -18,7 +18,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-jshint": "^0.10.0",
     "karma": "^0.12.16",
-    "protractor": "^0.23.1",
+    "protractor": "^0.20.1",
     "http-server": "^0.6.1",
     "karma-chrome-launcher": "^0.1.4",
     "karma-firefox-launcher": "^0.1.3",

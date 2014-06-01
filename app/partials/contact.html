@@ -4,20 +4,25 @@
 
 <p><strong>Skype name:</strong> Jonoh89</p>
 
-<form role="form" ng-controller="ContactFormCtrl as contactFormCtrl" ng-submit="contactFormCtrl.sendMessage()">
-    <div class="form-group">
-        <label for="inputName">Name</label>
-        <input ng-model="contactFormCtrl.form.name" type="text" class="form-control" id="inputName" placeholder="Enter Name">
-    </div>
-    <div class="form-group">
-        <label for="unputEmail">Email address</label>
-        <input ng-model="contactFormCtrl.form.email" type="email" class="form-control" id="unputEmail" placeholder="Enter email" required>
-    </div>
-    <div class="form-group">
-        <label for="textAreaMessage">Message</label>
-        <textarea ng-model="contactFormCtrl.form.message" id="textAreaMessage" class="form-control" rows="3"></textarea>
-    </div>
+<p><strong>Email:</strong> Jonoh89@gmail.com</p>
 
+<section class="well" ng-controller="ContactFormCtrl as contactFormCtrl">
+    <h3>Send me a message:</h3>
+    <div ng-show="contactFormCtrl.sent" class="alert alert-success">Message sent!</div>
+    <form name="messageForm" role="form" ng-submit="contactFormCtrl.sendMessage($event)" novalidate>
+        <div class="form-group">
+            <label for="inputName">Name</label>
+            <input ng-model="contactFormCtrl.form.name" type="text" class="form-control" id="inputName" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email address</label>
+            <input ng-model="contactFormCtrl.form.email" type="email" class="form-control" id="inputEmail" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="textAreaMessage">Message</label>
+            <textarea ng-model="contactFormCtrl.form.message" id="textAreaMessage" class="form-control" rows="3" required></textarea>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <button type="submit" class="btn btn-primary" data-loading-text="Sending...">Submit</button>
+    </form>
+</section>
