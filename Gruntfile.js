@@ -1,5 +1,10 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+
+        dir: {
+            cssFiles: ['bower_components/bootstrap/dist/css/bootstrap.min.css', 'app/assets/css/**/*.css','!app/assets/css/**/*.min.css']
+        },
+
         concat : {
             libs: {
                 src: ['bower_components/jquery/dist/jquery.min.js',
@@ -8,6 +13,14 @@ module.exports = function(grunt) {
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/angular-parse/angular-parse.js'],
                 dest: 'app/js/libs.js'
+            }
+        },
+
+        cssmin: {
+            combine: {
+                files: {
+                    'app/assets/css/all.css': ['<%= dir.cssFiles %>']
+                }
             }
         },
 
@@ -23,6 +36,10 @@ module.exports = function(grunt) {
             jshint: {
                 files: ['<%= jshint.files %>'],
                 tasks: ['jshint']
+            },
+            css: {
+                files: ['<%= dir.cssFiles %>'],
+                tasks: ['cssmin']
             }
         }
     });
@@ -30,4 +47,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 };
