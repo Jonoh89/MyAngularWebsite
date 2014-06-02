@@ -23,6 +23,6 @@
             <textarea ng-model="contactFormCtrl.form.message" id="textAreaMessage" class="form-control" rows="3" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" data-loading-text="Sending...">Submit</button>
+        <button ng-disabled="messageForm.$invalid" type="submit" class="btn btn-primary" data-loading-text="Sending...">Submit</button>
     </form>
 </section>
