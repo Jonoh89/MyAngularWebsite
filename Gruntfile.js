@@ -2,7 +2,16 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         dir: {
-            cssFiles: ['bower_components/bootstrap/dist/css/bootstrap.min.css', 'app/assets/css/**/*.css','!app/assets/css/**/*.min.css']
+            cssFiles: ['bower_components/bootstrap/dist/css/bootstrap.min.css','bower_components/font-awesome/css/font-awesome.min.css', 'app/assets/css/**/*.css','!app/assets/css/**/*.min.css']
+        },
+
+        copy: {
+            fonts: {
+                expand: true,
+                cwd: 'bower_components/font-awesome/fonts/',
+                src: '**',
+                dest: 'app/assets/fonts/'
+            }
         },
 
         concat : {
@@ -39,7 +48,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['<%= dir.cssFiles %>'],
-                tasks: ['cssmin']
+                tasks: ['cssmin','copy:fonts']
             }
         }
     });
@@ -48,4 +57,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.registerTask('build', ['cssmin','copy','concat']);
 };
