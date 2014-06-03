@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module('myWeb.app',['ngRoute','Parse','myWeb.navBar','myWeb.contact']);
+    var app = angular.module('myWeb.app',['ngRoute','Parse','myWeb.navBar','myWeb.footer','myWeb.contact']);
 
     app.config(['$routeProvider','ParseProvider',
         function($routeProvider,ParseProvider){
