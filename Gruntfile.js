@@ -37,6 +37,16 @@ module.exports = function(grunt) {
             files: ['Gruntfile.js', 'app/js/**/*.js','test/**/*.js','!app/js/libs.js']
         },
 
+        jekyll: {
+            dist: {
+                options: {
+                    config: 'blog/_config.yml',
+                    src: 'blog',
+                    dest: 'app/blog'
+                }
+            }
+        },
+
         watch: {
             libs: {
                 files: ['<%= concat.libs.src %>'],
@@ -49,6 +59,10 @@ module.exports = function(grunt) {
             css: {
                 files: ['<%= dir.cssFiles %>'],
                 tasks: ['cssmin','copy:fonts']
+            },
+            blog: {
+                files: ['<%= jekyll.dist.options.src%>/**/*'],
+                tasks: ['jekyll:dist']
             }
         }
     });
@@ -58,6 +72,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-jekyll');
 
-    grunt.registerTask('build', ['cssmin','copy','concat']);
+    grunt.registerTask('build', ['cssmin','copy','concat','jekyll']);
+    grunt.registerTask('development', ['cssmin','copy','concat','jekyll','watch']);
 };

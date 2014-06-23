@@ -12,6 +12,9 @@
                 when("/contact", {
                     templateUrl: 'partials/contact.html'
                 }).
+                when("/blog", {
+                    templateUrl: 'blog/index.html'
+                }).
                 otherwise({
                     redirectTo: '/home'
                 });
